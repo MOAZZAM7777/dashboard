@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->    
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>paint</span>solve<span></div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="#"><i class='bx bxs-dashboard bx-tada' style='color:#003032'></i>Dashboard</a></li>
+
+            <li><a href="#"><i class='bx bxs-user-voice bx-tada' style='color:#331054' ></i>customer<span class='bx bx-chevron-down first'></span></a>
+            <ul class="cust-show">
+            <li><a href="#"><i class='bx bx-low-vision bx-flashing' style='color:#770f83' ></i>View customer</a></li>
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add customer</a></li>
+            <li><a href="#"><i class='bx bx-comment-x bx-flashing bx-flip-vertical' style='color:#770f83' ></i>Delete customer</a></li>  
+        </ul>
+        </li>
+            <li><a href="#"><i class='bx bx-category-alt bx-tada' style='color:#153200' ></i>Categories <span class='bx bx-chevron-down second'></span></a>
+            <ul class="cat-show">
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add Category</a></li>
+            <li><a href="#"><i class='bx bx-comment-x bx-flashing bx-flip-vertical' style='color:#770f83'></i>Delete category</a></li>
+            <li><a href="#"><i class='bx bx-low-vision bx-flashing' style='color:#770f83' ></i>View category</a></li>
+        </ul>
+        </li>
+            <li><a href="#"><i class='bx bxs-coin-stack bx-tada bx-flip-vertical' style='color:#250032'></i>Products <span class='bx bx-chevron-down theird'></span></a>
+            <ul class="prod-show">
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add Product</a></li>
+            <li><a href="#"><i class='bx bx-low-vision bx-flashing' style='color:#770f83' ></i>View Product</a></li>
+            <li><a href="#"><i class='bx bx-comment-x bx-flashing bx-flip-vertical' style='color:#770f83'></i>Delete product</a></li>
+            </ul></li>
+            <li><a href="#"><i class='bx bxs-user' style='color:#063200' ></i>Staff Managmnet<span class='bx bx-chevron-down fourth'></span></a>
+            <ul class="staff-show">
+            <li><a href="#"><i class='bx bx-low-vision bx-flashing' style='color:#770f83' ></i>view staff</a></li>
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add Staff</a></li>
+            <li><a href="#"><i class='bx bx-comment-x bx-flashing bx-flip-vertical' style='color:#770f83'></i>Delete staff </a></li>
+            </ul></li>
+            <li><a href="#"><i class='bx bxs-truck bx-fade-right' style='color:#070032'></i>Supplier Manage<span class='bx bx-chevron-down five'></span></a>
+            <ul class="supp-show">
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add Supplier</a></li>
+            <li><a href="#"><i class='bx bx-comment-x bx-flashing bx-flip-vertical' style='color:#770f83'></i>Delete supplier</a></li>
+            </ul></li>
+            <li><a href="#"><i class='bx bxs-cart bx-tada'></i>stock<span class='bx bx-chevron-down six'></span></a>
+            <ul class="stk-show">
+            <li><a href="#"><i class='bx bx-low-vision bx-flashing' style='color:#770f83' ></i>view Stock</a></li>
+            <li><a href="#"><i class='bx bx-plus bx-rotate-90 bx-flashing' style='color:#770f83'></i>Add Stock</a></li>
+            <li><a href="#"><i class='bx bxs-up-arrow bx-flashing' style='color:#770f83' ></i>update stock</a></li>
+            </ul>
+        </li>
+            <li><a href="#"><i class='bx bx-wallet bx-tada' style='color:#4d1054' ></i>Sales</a></li>
+            <li><a href="#"><i class='bx bxs-cog bx-tada bx-flip-horizontal' style='color:black'></i>settings</a></li>
+        </ul>       
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar --> 
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">2</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Welcome...! Admin</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Analytics
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bxs-coin-stack bx-tada' style='color:#32002a' ></i>
+                    <span class="info">
+                        <h3>
+                            5
+                        </h3>
+                        <p>Products Available</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-category-alt bx-flashing bx-rotate-180' style='color:#000432' ></i>
+                    <span class="info">
+                        <h3>
+                            20
+                        </h3>
+                        <p>Categories</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-user bx-tada bx-flip-horizontal' style='color:#0c3200' ></i>
+                    <span class="info">
+                        <h3>
+                            2
+                        </h3>
+                        <p>Staff</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            6,742
+                        </h3>
+                        <p>Todays Transactions</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Recent purchase</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>customer</th>
+                                <th>purchase Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status process">Processing</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Reminders -->
+                <div class="reminders">
+                    <div class="header">
+                        <i class='bx bx-note'></i>
+                        <h3>Remiders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list">
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Arriving Orders</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Analyse Inventory</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Low Stock Level</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+
+            </div>
+
+        </main>
+
+    </div>
+  <script src="index.js"></script>    
+    </body>
+    </html>
+</body>
+
+</html>
