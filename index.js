@@ -1,26 +1,20 @@
-const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
+const listItems= document.querySelectorAll('.sidebar .side-menu li ul a:not(.logout)');
 
-
-sideLinks.forEach(item => {
+listItems.forEach(item => {
     const li = item.parentElement;
     item.addEventListener('click', () => {
-        sideLinks.forEach(i => {
+        listItems.forEach(i => {
             i.parentElement.classList.remove('active');
-        })
+        });
         li.classList.add('active');
-    })
+    });
 });
-
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sideBar = document.querySelector('.sidebar');
 
 menuBar.addEventListener('click', () => {
     sideBar.classList.toggle('close');
 });
-
-const searchBtn = document.querySelector('.content nav form .form-input button');
-const searchBtnIcon = document.querySelector('.content nav form .form-input button .bx');
-const searchForm = document.querySelector('.content nav form');
 
 window.addEventListener('resize', () => {
     if (window.innerWidth < 768) {
@@ -33,7 +27,6 @@ window.addEventListener('resize', () => {
         searchForm.classList.remove('show');
     }
 });
-
 const toggler = document.getElementById('theme-toggle');
 
 toggler.addEventListener('change', function () {
@@ -43,5 +36,3 @@ toggler.addEventListener('change', function () {
         document.body.classList.remove('dark');
     }
 });
-
-
