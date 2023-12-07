@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Admin Dashboard</title>
+    
+</head>
+<body>
+
+    <!-- Sidebar -->    
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>paint</span>solve<span></div>
+        </a> 
+        <!-- List -->
+        <ul class="sidebar-list">
+            <!-- Non Dropdown List -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-dashboard bx-tada' style='color:#003032'></i>
+                        <span class="name">Dashboard</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Dashboard</a></div>
+            </li> 
+
+             <!-- Dropdown List Item -->
+             <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-user-voice bx-tada' style='color:#331054' ></i>
+                        <span class="name">customer</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">customer</a>
+                    <a href="#" class="link">View customer</a>
+                    <a href="#" class="link">Add customer</a>
+                    <a href="#" class="link">Delete customer</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-category-alt bx-tada' style='color:#153200' ></i>
+                        <span class="name">Category</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Category</a>
+                    <a href="#" class="link">View Category</a>
+                    <a href="#" class="link">update Category</a>
+                    <a href="#" class="link">Delete Category</a>
+                </div>
+            </li> 
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-coin-stack bx-tada bx-flip-vertical' style='color:#250032'></i>
+                        <span class="name">Products</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Products</a>
+                    <a href="#" class="link">View Products</a>
+                    <a href="#" class="link">update Products</a>
+                    <a href="#" class="link">Delete Products</a>
+                </div>
+            </li> 
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-user' style='color:#063200' ></i>
+                        <span class="name">Staff</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Staff</a>
+                    <a href="#" class="link">View staff</a>
+                    <a href="#" class="link">update staff</a>
+                    <a href="#" class="link">Delete staff</a>
+                </div>
+            </li> 
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-truck bx-fade-right' style='color:#070032'></i>
+                        <span class="name">Supplier</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Supplier</a>
+                    <a href="#" class="link">View supplier</a>
+                    <a href="#" class="link">update supplier</a>
+                    <a href="#" class="link">Delete supplier</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-cart bx-tada'></i>
+                        <span class="name">Stock</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Staff</a>
+                    <a href="#" class="link">View Stock</a>
+                    <a href="#" class="link">update Stock</a>
+                    <a href="#" class="link">Delete Stock</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-dashboard bx-tada' style='color:#003032'></i>
+                        <span class="name">Sales</span>
+                    </a>
+                </div>
+
+        </ul>
+    </div>
+    <!-- End of Sidebar --> 
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+            </a>
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Welcome...! Admin</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Analytics
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bxs-coin-stack bx-tada' style='color:#32002a' ></i>
+                    <span class="info">
+                        <h3>
+                            5
+                        </h3>
+                        <p>Products Available</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-category-alt bx-flashing bx-rotate-180' style='color:#000432' ></i>
+                    <span class="info">
+                        <h3>
+                            20
+                        </h3>
+                        <p>Categories</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-user bx-tada bx-flip-horizontal' style='color:#0c3200' ></i>
+                    <span class="info">
+                        <h3>
+                            2
+                        </h3>
+                        <p>Staff</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            6,742
+                        </h3>
+                        <p>Todays Transactions</p>
+                    </span>
+                </li>
+            </ul>
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+    
+    </body>
+    </html>
+</body>
+
+</html>

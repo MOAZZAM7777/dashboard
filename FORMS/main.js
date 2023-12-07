@@ -1,27 +1,17 @@
-const listItems= document.querySelectorAll('.sidebar .side-menu li ul a:not(.logout)');
+const listItems = document .querySelectorAll(".sidebar-list li");
 
-listItems.forEach(item => {
-    const li = item.parentElement;
-    item.addEventListener('click', () => {
-        listItems.forEach(i => {
-            i.parentElement.classList.remove('active');
-        });
-        li.classList.add('active');
-    });
-});
 listItems.forEach(item =>{
-    item.addEventListener("click", ()=>{
+    item.addEventListener("click",()=>{
         let isActive = item.classList.contains("active");
 
-        listItems.forEach(( e1 )=>{
+        listItems.forEach(e1 =>{
             e1.classList.remove("active");
-        });
+        })
 
-        if (isActive)item.classList.remove("active");
+        if (isActive) item.classList.remove("active");
         else item.classList.add("active");
     });
 });
-
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sideBar = document.querySelector('.sidebar');
 

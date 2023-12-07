@@ -1,0 +1,75 @@
+body{
+    background: url('./images/paint-splatter-background-2trj9aayshhzkbiu.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: arial;
+}
+div.loginHeader{
+    text-align: center;
+}
+div.loginHeader{
+    margin-bottom: 60px;
+}
+div.loginHeader h1{
+    font-size: 100px;
+    color:black;
+    padding: 0px;
+    margin: 0px;
+    
+}
+div.loginHeader p{
+    color:black;
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+div.loginHeader p:after{
+    content:'';
+    display: block;
+    height: 5px;
+    margin: 0 auto;
+}
+div.loginBody form{
+    margin: 0 auto;
+    width: 450px;
+    background:black;
+    padding: 50px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+div.loginInputsContainer{
+    margin-top:60px;
+}
+div.loginInputsContainer label{
+    
+    text-align:left;
+    display:block;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+
+}
+div.loginInputsContainer input{
+    height: 40px;
+    width: 100%;
+    border: 2px solid black;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+}
+div.loginButtonContainer{
+    margin-top: 50px;
+    text-align: center;
+    
+}
+div.loginButtonContainer button{
+    font-size: 20px;
+    padding: 10px 40px;
+    background:white;
+    border: none;
+    color:black;
+    cursor: pointer;
+
+}
