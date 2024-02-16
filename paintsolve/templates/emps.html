@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/css/dashboard.css"/>
+    
+    <title>Staff Dashboard</title>
+</head>
+<body>
+    <!-- Sidebar -->    
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>paint</span>solve<span></div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="{% url 'emps' %}" style=" padding-bottom:47px"><i class='bx bxs-tachometer bx-tada' style='color:#7513ef'></i>Dashboard</a></li>
+
+            <li><a href="#" style="padding-bottom:25px"><i class='bx bxs-user-voice bx-tada'style='color:#331054'></i>customer<span class='bx bx-chevron-down first'></span></a>
+            <ul>
+            <li><a href="{% url 'custo'%}" style="color:green"><i class='bx bxs-right-arrow-alt bx-flashing' style='color:#b013ef'></i></i>Customer Details</a></li>
+        </ul>
+        </li>
+            <li><a href="#" style="padding-bottom:25px"><i class='bx bx-category-alt bx-tada' style='color:#153200'></i>Categories<span class='bx bx-chevron-down second'></span></a>
+            <ul>
+            <li><a href="{% url 'cat' %}" style="color:green"><i class='bx bxs-right-arrow-alt bx-flashing' style='color:#b013ef'></i>category Details</a></li>
+            </ul>
+        </li>
+            <li><a href="#" style="padding-bottom:25px"><i class='bx bxs-package bx-tada' style='color:#3516bf'></i>Products<span class='bx bx-chevron-down theird'></span></a>
+            <ul>
+            <li><a href="{% url 'pro'%}" style="color:green"><i class='bx bxs-right-arrow-alt bx-flashing' style='color:#b013ef'></i>Product Details</a></li>
+            </ul>
+        </li>
+            <li><a href="#" style="padding-bottom:25px"><i class='bx bxs-cart bx-tada'></i>stock<span class='bx bx-chevron-down six'></span></a>
+            <ul>
+            <li><a href="{% url 'stok'%}"style="color:green"><i class='bx bxs-right-arrow-alt bx-flashing' style='color:#b013ef'></i></i>Stock Details</a></li>
+            </ul>
+        </li>  
+        </ul>       
+        <ul class="side-menu">
+            <li>
+                <a href="{% url 'logout'%}" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar --> 
+    <!-- Main Content -->
+    
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="profile">
+                <img src="/static/img/ps_logo.png">
+            </a>
+        </nav>
+        <!-- End of Navbar -->
+        {% block conten %} 
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1 color="purple">Welcome...! staff</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Analytics
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bxs-coin-stack bx-tada' style='color:#32002a' ></i>
+                    <span class="info">
+                        <h3>{{pro_count}}</h3>
+                        <p>Products Available</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-category-alt bx-flashing bx-rotate-180' style='color:#000432' ></i>
+                    <span class="info">
+                        <h3>{{cat_count}}</h3>
+                        <p>Categories</p>
+                    </span>
+                </li>
+                <li><i class='bx bxs-user bx-tada bx-flip-horizontal' style='color:#0c3200'></i>
+                    <span class="info">
+                         <h3>{{emp_count}}</h3> 
+                        <p>Staff</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            6,742
+                        </h3>
+                        <p>Todays Transactions</p>
+                    </span>
+                </li>
+            </ul>
+        <!-- Bar Chart --> 
+        
+        <div class="bottom-data">
+            <div class="orders">
+                <div class="header">
+                    <i class='bx bxs-category-alt bx-spin' style='color:#1a3705'></i>
+                    <h3>Categories</h3>
+                    <div>
+                        <canvas id="myChart" width="880" height="450"></canvas>
+                      </div>
+                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                      <script>
+                        const ctx = document.getElementById('myChart').getContext('2d');
+                        new Chart(ctx, {
+                          type: 'bar',
+                          data: {
+                            labels: [{% for Category in cat  %} '{{Category.categoryname}}', {% endfor %}],
+                            datasets: [{
+                              label: '# of Categories',
+                              data: [{% for Category in cat  %} {{Category.quantity}}, {% endfor %}],
+                              backgroundColor:[
+                                'rgba(255,99,132,0.8)',
+                                'rgba(54,162,235,0.8)',
+                                'rgba(255,206,86,0.8)',
+                                'rgba(75,192,192,0.8)',
+                                'rgba(153,102,255,0.8)',
+                                'rgba(255,159,64,0.8)',
+                              ],
+                              borderColor:[
+                                'rgba(255,99,132,1)',
+                                'rgba(54,162,235,1)',
+                                'rgba(255,206,86,1)',
+                                'rgba(75,192,192,1)',
+                                'rgba(153,102,255,1)',
+                                'rgba(255,159,64,1)',
+                              ],
+                              borderWidth:7
+                            }]
+                          },
+                          options: {
+                            scales: {
+                              y: {
+                                beginAtZero: true
+                              }
+                            }
+                          }
+                        });
+                      </script>
+                </div>
+            </div>
+             <!-- Reminders -->
+             <div class="reminders">
+                <div class="header">
+                  <i class='bx bx-package bx-burst' style='color:rgba(11,187,87,0.98)' ></i>
+                    <h3>Products</h3> 
+                </div>
+                <div>
+                <canvas id="myChart1" width="700" height="470"></canvas>
+                  </div>
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                  <script>
+                    const ctx1 = document.getElementById('myChart1').getContext('2d');
+                    new Chart(ctx1, {
+                      type: 'pie',
+                      data: {
+                        labels: [{% for Products in pro  %} '{{Products.Brand}}', {% endfor %}],
+                        datasets: [{
+                          label: '# of Product',
+                          data: [{% for Products in pro  %} {{Products.quantity}}, {% endfor %}],
+                          backgroundColor:[
+                                'rgba(255,99,132,0.5)',
+                                'rgba(54,162,235,0.5)',
+                                'rgba(255,206,86,0.5)',
+                                'rgba(75,192,192,0.5)',
+                                'rgba(153,102,255,0.5)',
+                                'rgba(255,159,64,0.5)',
+                              ],
+                              borderColor:[
+                                'rgba(255,99,132,1)',
+                                'rgba(54,162,235,1)',
+                                'rgba(255,206,86,1)', 
+                                'rgba(75,192,192,1)',
+                                'rgba(153,102,255,1)',
+                                'rgba(255,159,64,1)',
+                              ],
+                          borderWidth: 7
+                        }]
+                      },
+                      options: {
+                        responsive:true,
+                        maintainAspectRatio: false,
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+                </div>
+            </div>
+            {% endblock %}   
+            <!-- End of Reminders-->
+        </div>
+    </main>
+</div> 
+    </body>
+    </html>
+    <script src="/static/js/index.js"></script>   
+    
+</body>
+</html>
+
